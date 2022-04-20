@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+   
+    'daycareapp',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -66,6 +69,13 @@ TEMPLATES = [
         },
     },
 ]
+
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+
 
 WSGI_APPLICATION = 'daycare.wsgi.application'
 
