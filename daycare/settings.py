@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'daycareapp',
     'cloudinary',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -81,8 +82,10 @@ WSGI_APPLICATION = 'daycare.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'daycare',
+        'USER': 'moringa',
+    'PASSWORD':'Access',
     }
 }
 
@@ -111,7 +114,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
+
 
 USE_I18N = True
 
@@ -129,3 +133,10 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# adding config
+cloudinary.config( 
+  cloud_name = "dekmxedbk", 
+  api_key = "421155972927186", 
+  api_secret = "iB1wb2TG1yKRab_lh-AnermiCZ0" 
+)
