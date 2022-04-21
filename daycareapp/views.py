@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, Http404
-from .models import Images
+from .models import Images,ChildEnrollment
+from .forms import ChildEnrollmentForm
 
 # Create your views here.
 def index(request):
@@ -15,3 +16,9 @@ def image(request,image_id):
         raise Http404()
     
     return render(request,"image.html", {"image":image})
+
+def enrollment(request):
+   form=ChildEnrollmentForm()
+   return render(request, 'childenrol.html',  {"form": form,})
+
+   
