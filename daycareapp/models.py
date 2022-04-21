@@ -18,8 +18,9 @@ class Images(models.Model):
         self.save()
 
     def delete_image(self):
-        self.delete()@classmethod
-
+        self.delete()
+        
+@classmethod
 def update_image(cls, id,value):
         image = cls.objects.filter(id=id).update(image_name=value)
         return image
@@ -40,7 +41,7 @@ class StaffProfile(models.Model):
     image = CloudinaryField('image')
 
     def __str__(self):
-        return self.profile
+        return self.name
 
     def save_profile(self):
         self.save()

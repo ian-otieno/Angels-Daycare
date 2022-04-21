@@ -16,6 +16,14 @@ import cloudinary.uploader
 import cloudinary.api
 import os
 
+# adding config
+cloudinary.config( 
+    cloud_name = "dekmxedbk", 
+    api_key = "421155972927186", 
+    api_secret = "iB1wb2TG1yKRab_lh-AnermiCZ0" 
+)
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -134,9 +142,3 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# adding config
-cloudinary.config( 
-  cloud_name = "dekmxedbk", 
-  api_key = "421155972927186", 
-  api_secret = "iB1wb2TG1yKRab_lh-AnermiCZ0" 
-)
