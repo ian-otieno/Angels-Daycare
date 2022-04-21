@@ -11,6 +11,16 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+import os
+
+cloudinary.config( 
+  cloud_name = "iainoo", 
+  api_key = "166495192544533", 
+  api_secret = "1G7wj0mGvv5W8yw9JaOeFZkEUPE" 
+)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,6 +47,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'daycareapp',
+    'cloudinary',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -74,10 +87,12 @@ WSGI_APPLICATION = 'daycare.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+   'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'images',
+        'USER': 'moringa',
+        'PASSWORD': 'moringa',
+    } 
 }
 
 
@@ -116,8 +131,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
 STATIC_URL = '/static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
