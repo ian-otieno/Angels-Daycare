@@ -7,6 +7,6 @@ from django.urls import path, include
 
 
 urlpatterns=[
-    url('^$',views.daycareapp, name = 'daycareapp'),
-    url(r'^profile/', views.profile, name = 'profile'),
+    # url('^$',views.daycareapp, name = 'daycareapp'),
+    url(r'^$', views.staffProfile, name = 'staffProfile'),
 ]

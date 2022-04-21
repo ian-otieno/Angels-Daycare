@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Profile 
+from .models import StaffProfile 
 from django.http import HttpResponse, Http404
 from .models import Images
 
@@ -16,8 +16,8 @@ def image(request,image_id):
 
 # Profile View
 
-def profile(request):
-    daycareapp = Profile.objects.all()
+def staffProfile(request):
+    daycareapp = StaffProfile.objects.all()
     params = {
         'daycareapp': daycareapp,
     }

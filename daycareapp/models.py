@@ -32,7 +32,7 @@ def get_image_by_id(cls, image_id):
 
 # Staff Profile Model
 
-class staffProfile(models.Model):
+class StaffProfile(models.Model):
     profile = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     name = models.CharField(max_length=80, blank=True)
     title = models.CharField(max_length=80, blank=True)
