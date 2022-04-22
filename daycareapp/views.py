@@ -76,3 +76,18 @@ def profile(request):
     return render(request, 'profile.html', {"images": images, "profile": profile})
     # return render(request, 'profile.html')
 
+def image(request,image_id):
+    try:
+        image = Images.objects.get(id = image_id)
+    except Images.DoesNotExist:
+        raise Http404()
+
+
+# Profile View
+
+def staffProfile(request):
+    daycareapp = StaffProfile.objects.all()
+    params = {
+        'daycareapp': daycareapp,
+    }
+    return render(request, 'about.html', params)
